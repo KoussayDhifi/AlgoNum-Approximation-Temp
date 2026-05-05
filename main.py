@@ -1,6 +1,5 @@
 """
 Programme principal : main.py
-==============================
 Analyse numérique complète :
   1. Chargement des données expérimentales
   2. Phénomène de Runge
