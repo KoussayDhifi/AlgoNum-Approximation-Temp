@@ -17,13 +17,13 @@ import matplotlib.gridspec as gridspec
 import os
 import sys
 import csv
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 # ── Résolution des imports relatifs ────────────────────────────────────────────
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _SRC  = os.path.join(_HERE, "src")
 if _SRC not in sys.path:
     sys.path.insert(0, _SRC)
-
 from applications.cooling import CoolingProblem
 from applications.flow    import FlowProblem
 from interpolation.polynomial  import PolynomialInterpolation
