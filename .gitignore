@@ -1,1 +1,4 @@
 algonum/
+venv/
+*.cpython-3*
+__pycache__/
