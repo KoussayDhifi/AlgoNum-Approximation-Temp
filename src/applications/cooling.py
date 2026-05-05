@@ -111,7 +111,7 @@ class CoolingProblem:
         87.5...
         """
         t_eval = np.asarray(t_eval, dtype=float)
-        scalar = t_eval.ndim == 0
+        scalar = t_eval.ndim == 0 #detecte si c est scalaire 
         t_eval = np.atleast_1d(t_eval)
 
         t_min, t_max = self.t_data[0], self.t_data[-1]
@@ -119,7 +119,7 @@ class CoolingProblem:
             raise ValueError(
                 f"t_eval={t_eval} est hors de l'intervalle [{t_min}, {t_max}]."
             )
-
+#le spline cubique naturelle est défini sur l'intervalle [t_data[0], t_data[-1]], donc on vérifie que les instants d'évaluation sont bien dans cette plage. Si ce n'est pas le cas, une exception est levée pour éviter des extrapolations non fiables.
         result = np.array([self._spline.evaluate(ti) for ti in t_eval])
         return float(result[0]) if scalar else result
 
